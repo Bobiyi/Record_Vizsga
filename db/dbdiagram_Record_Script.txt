@@ -1,0 +1,66 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Enum role{
+  featured
+  producer
+}
+
+Table  record{
+  id int [primary key]
+  name varchar [not null]
+  type int 
+  release_date date [default:`CURRENT_DATE()`]
+  length int [check: `length>0`,default:1] 
+}
+
+Table record_type{
+  id int [primary key]
+  type_name varchar [unique, not null]
+}
+
+Table artist_record{
+  artist_id int 
+  record_id int
+  role role
+  indexes {
+    (artist_id,record_id)
+  }
+}
+
+Table artist{
+  id int [primary key]
+  name varchar [unique, not null]
+  birth_date date
+  nationality varchar
+  url varchar
+}
+
+Table user{
+  id int [primary key]
+  password_hash char [not null]
+  name varchar [not null]
+  email varchar [unique]
+  phone varchar [unique]
+  indexes {
+    (name)
+  }
+}
+
+Table favourite{
+  user_id int
+  record_id int
+  indexes {
+    (record_id,user_id)
+  }
+}
+
+Ref Record_Id: record.id < artist_record.record_id
+
+Ref Artist_Id: artist.id < artist_record.artist_id
+
+Ref Record_Type: record.type > record_type.id
+
+Ref Record_Id: favourite.record_id > record.id
+
+Ref User_Id: user.id < favourite.user_id
