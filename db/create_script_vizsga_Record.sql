@@ -9,14 +9,15 @@ set NAMES utf8mb4 collate utf8mb4_hungarian_ci;
 create table artist(
 	id int primary key auto_increment,
 	name varchar(64) not null,
-	birth_date date,
+	active_since date,
 	nationality varchar(64)
 	`url` varchar(128)
+	is_group int(1)
 );
 
 create table `record`(
 	id int primary key auto_increment,
-	name varchar(64) not null,
+	`name` varchar(64) not null,
 	type_id int,
 	release_date date,
 	`length` int

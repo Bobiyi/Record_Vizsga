@@ -31,9 +31,10 @@ Table artist_record{
 Table artist{
   id int [primary key]
   name varchar [unique, not null]
-  birth_date date
+  active_since date
   nationality varchar
   url varchar
+  is_group bit
 }
 
 Table user{
