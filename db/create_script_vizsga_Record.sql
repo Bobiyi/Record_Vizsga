@@ -65,7 +65,7 @@ create table favourite(
 alter table favourite add constraint frk_User_ID foreign key (user_id) references user(id);
 alter table favourite add constraint frk_Favourite_Record_ID foreign key (record_id) references record(id);
 
-alter table `user` add constra	int uc_Email unique (email);
+alter table `user` add constraint uc_Email unique (email);
 alter table `user` add constraint uc_Phone unique (phone);
 
 create index idx_Favourite on favourite(user_id,record_id);
