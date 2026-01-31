@@ -29,9 +29,9 @@ insert into `record`(`name`,type_id,release_year,`length`)
         ("Whole Lotta Blue",1,"2020",24),
         ("Live Lit",1,"2018",19),
         ("Melody",1,"2025",30),
-        ("1001 Eyes", 1, 2021, 13),
-        ("Singularity", 1, 2024, 15),
-        ("SIGNAL: MEMORIES", 1, 2024, 7)
+        ("1001 Eyes", 1, "2021", 13),
+        ("Singularity", 1, "2024", 15),
+        ("SIGNAL: MEMORIES", 1, "2024", 7)
     ;
 /*------------------------------------------- SZERZŐK - ALBUMOK KÖTÉS---------------------------------------*/
 insert into artist_record(artist_id,record_id,`role`)
