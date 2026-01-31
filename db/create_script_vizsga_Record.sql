@@ -9,9 +9,9 @@ set NAMES utf8mb4 collate utf8mb4_hungarian_ci;
 create table artist(
 	id int primary key auto_increment,
 	name varchar(64) not null,
-	active_since date,
-	nationality varchar(64)
-	`url` varchar(128)
+	active_since int,
+	nationality varchar(64),
+	`url` varchar(128),
 	is_group int(1)
 );
 
@@ -19,7 +19,7 @@ create table `record`(
 	id int primary key auto_increment,
 	`name` varchar(64) not null,
 	type_id int,
-	release_date date,
+	release_year int,
 	`length` int
 );
 
@@ -39,7 +39,7 @@ alter table artist_record add constraint frk_Artist_ID foreign key (artist_id) r
 alter table artist_record add constraint frk_Record_ID foreign key (record_id) references record(id) on delete cascade;
 
 alter table record add constraint frk_Type foreign key (type_id) references record_type(id);
-alter table record modify release_date date default CURRENT_DATE();
+alter table record modify release_year int default year(CURRENT_DATE());
 alter table record modify `length` int default 1;
 alter table record add constraint chk_Length check (`length`>0);
 
@@ -65,7 +65,7 @@ create table favourite(
 alter table favourite add constraint frk_User_ID foreign key (user_id) references user(id);
 alter table favourite add constraint frk_Favourite_Record_ID foreign key (record_id) references record(id);
 
-alter table `user` add constraint uc_Email unique (email);
+alter table `user` add constra	int uc_Email unique (email);
 alter table `user` add constraint uc_Phone unique (phone);
 
 create index idx_Favourite on favourite(user_id,record_id);
