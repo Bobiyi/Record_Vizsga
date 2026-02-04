@@ -1,24 +1,29 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
+    <q-header  class="header">
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
 
-        <q-toolbar-title> Quasar App </q-toolbar-title>
+        <q-toolbar-title>
+          <q-avatar>
+            <img src="~/src/assets/Record_Logo.svg" alt="">
+          </q-avatar>
+          Record 
+        </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
+        
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
+    <q-drawer v-model="leftDrawerOpen" show-if-above class="drawer">
       <q-list>
-        <q-item-label header> Essential Links </q-item-label>
+        <q-item-label header></q-item-label>
 
         <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="content">
       <router-view />
     </q-page-container>
   </q-layout>
@@ -79,3 +84,22 @@ function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
 }
 </script>
+
+<style lang="scss">
+.header{
+  background-color: $darker;
+  color: $deep-purple-13;
+}
+.content{
+    background-color: $dark ;
+    background: linear-gradient(0deg,
+    $dark 0%,
+    $dark 91%,  
+    $deep-purple-13 100%);
+}
+.drawer{
+  background-color: $darker;
+  color: $deep-purple-13;
+  border-right: 1px ridge $deep-purple-13 ;
+}
+</style>
