@@ -16,12 +16,12 @@ insert into artist(`name`,active_since,nationality,`url`,is_group)
         ("Metallica","1981","usa","https://www.metallica.com",1), /*1*/
         ("Michael Jackson","1964","usa","https://www.michaeljackson.com",0), /*2*/
         ("Playboi Carti","2015","usa",null,0), /*3*/
-        ("1000 Eyes", "2021", null, null, 0), /*4*/
+        ("1000 Eyes", "2021", null, "https://thousandeyes.bandcamp.com", 0), /*4*/
         ("Masayoshi Takanaka","1970","jpn","https://takanaka.com",0), /*5*/
         ("Kárpátia","2003","hun","https://www.karpatiazenekar.hu",0), /*6*/
         ("Korda György","1958","hun",null,0), /*7*/
         ("The Neighbourhood", "2011", "usa", "https://tour.thenbhd.com",1), /*8*/
-        ("Astrophysics", "2018", "bra", null, 1), /*9*/
+        ("Astrophysics", "2018", "bra", "https://astrophysicsbrazil.bandcamp.com/music", 1), /*9*/
         ("TV Girl", "2013", "usa", "https://tvgirl.bandcamp.com",1), /*10*/
         ("Jordana", "2018", "usa","https://jordana.cool",0) /*11*/
     ;
@@ -29,7 +29,7 @@ insert into artist(`name`,active_since,nationality,`url`,is_group)
 insert into `record`(`name`,type_id,release_year,`length`)
     values
         ("Master Of Puppets",1,"1986",8), /*1*/
-        ("Ride The Lightning",1,"1984",64), /*2*/
+        ("Ride The Lightning",1,"1984",8), /*2*/
         ("Reload",1,"1997",13), /*3*/
         ("Bad",1,"1987",9), /*4*/
         ("Dangerous",1,"1991",9), /*5*/
@@ -41,10 +41,10 @@ insert into `record`(`name`,type_id,release_year,`length`)
         ("SIGNALIS: MEMORIES", 1, "2024", 7), /*11*/
         ("THE RAINBOW GOBLINS",1,"1981",14), /*12*/
         ("FINGER DANCIN'",2,"2006",4), /*13*/
-        ("BRASILIAN SKY",1,"1978",8), /*14*/
+        ("BRASILIAN SKIES",1,"1978",8), /*14*/
         ("ALL OF ME",1,"2006",14), /*15*/
         ("Bátraké a szerencse",1,"2014",11), /*16*/
-        ("Az Száműzött",1,"2013",13), /*17*/
+        ("A Száműzött",1,"2013",13), /*17*/
         ("Napfény kell a világnak - Tegnap és ma",1,"2005",15), /*18*/
         ("(((((ultraSOUND)))))", 1,"2025",15), /*19*/
         ("Hard To Imagine The Neigbourhood Ever Changing", 1, "2018", 21), /*20*/
