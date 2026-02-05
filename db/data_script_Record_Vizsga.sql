@@ -21,7 +21,7 @@ insert into artist(`name`,active_since,nationality,`url`,is_group)
         ("Kárpátia","2003","hun","https://www.karpatiazenekar.hu",0), /*6*/
         ("Korda György","1958","hun",null,0), /*7*/
         ("The Neighbourhood", "2011", "usa", "https://tour.thenbhd.com",1), /*8*/
-        ("Astrophysics", "2018", "bra", null), /*9*/
+        ("Astrophysics", "2018", "bra", null, 1), /*9*/
         ("TV Girl", "2013", "usa", "https://tvgirl.bandcamp.com",1), /*10*/
         ("Jordana", "2018", "usa","https://jordana.cool",0) /*11*/
     ;
@@ -48,7 +48,7 @@ insert into `record`(`name`,type_id,release_year,`length`)
         ("Napfény kell a világnak - Tegnap és ma",1,"2005",15), /*18*/
         ("(((((ultraSOUND)))))", 1,"2025",15), /*19*/
         ("Hard To Imagine The Neigbourhood Ever Changing", 1, "2018", 21), /*20*/
-        ("Thank you,", 3, "2012", 2) /*21*/
+        ("Thank you,", 3, "2012", 2), /*21*/
         ("HOPE LEFT ME", 1, "2022", 12), /*22*/
         ("Who Really Cares", 1, "2016", 10), /*23*/
         ("Fauxllennium", 1,"2024",7), /*24*/
