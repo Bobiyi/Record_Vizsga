@@ -13,62 +13,88 @@ insert into `user`(id,password_hash,`name`,email,phone)
 /*------------------------------------------- SZERZŐK ------------------------------------------------------*/
 insert into artist(`name`,active_since,nationality,`url`,is_group)
     values
-        ("Metallica","1981","usa","https://www.metallica.com",1),
-        ("Michael Jackson","1964","usa","https://www.michaeljackson.com",0),
-        ("Playboi Carti","2015","usa",null,0),
-        ("1000 Eyes", "2021", null, null, 0),
-        ("Masayoshi Takanaka","1970","jpn","https://takanaka.com",0),
-        ("Kárpátia","2003","hun","https://www.karpatiazenekar.hu",0),
-        ("Korda György","1958","hun",null,0),
-        ("The Neighbourhood", "2011", "usa", "https://tour.thenbhd.com",1)
+        ("Metallica","1981","usa","https://www.metallica.com",1), /*1*/
+        ("Michael Jackson","1964","usa","https://www.michaeljackson.com",0), /*2*/
+        ("Playboi Carti","2015","usa",null,0), /*3*/
+        ("1000 Eyes", "2021", null, null, 0), /*4*/
+        ("Masayoshi Takanaka","1970","jpn","https://takanaka.com",0), /*5*/
+        ("Kárpátia","2003","hun","https://www.karpatiazenekar.hu",0), /*6*/
+        ("Korda György","1958","hun",null,0), /*7*/
+        ("The Neighbourhood", "2011", "usa", "https://tour.thenbhd.com",1), /*8*/
+        ("Astrophysics", "2018", "bra", null), /*9*/
+        ("TV Girl", "2013", "usa", "https://tvgirl.bandcamp.com",1), /*10*/
+        ("Jordana", "2018", "usa","https://jordana.cool",0) /*11*/
     ;
 /*------------------------------------------- ALBUMOK ------------------------------------------------------*/
 insert into `record`(`name`,type_id,release_year,`length`)
     values
-        ("Master Of Dolls",1,"1986",8),
-        ("Ride The Storm",1,"1984",64),
-        ("Restock",1,"1997",13),
-        ("Good",1,"1987",9),
-        ("Freindly",1,"1991",9),
-        ("Whole Lotta Blue",1,"2020",24),
-        ("Live Lit",1,"2018",19),
-        ("Melody",1,"2025",30),
-        ("1000 Eyes", 1, "2021", 13),
-        ("Singularity", 1, "2024", 15),
-        ("SIGNAL: MEMORIES", 1, "2024", 7),
-        ("THE RAINBOW SKELETONS",1,"1981",14),
-        ("LEG DANCIN'",2,"2006",4),
-        ("BRASILIAN LAND",1,"1978",8),
-        ("AL OF YOU",1,"2006",14),
-        ("Merészeké a szerencse",1,"2014",11),
-        ("Az Üldözött",1,"2013",13),
-        ("Napsütés kell a világnak - Tegnap és ma",1,"2005",15),
-        ("(((((infraSOUND)))))", 1,2025,15),
-        ("Easy To Imagine The Neigbourhood Changing", 1, 2018, 21),
-        ("You're Welcome,", 3, 2012, 2)
+        ("Master Of Puppets",1,"1986",8), /*1*/
+        ("Ride The Lightning",1,"1984",64), /*2*/
+        ("Reload",1,"1997",13), /*3*/
+        ("Bad",1,"1987",9), /*4*/
+        ("Dangerous",1,"1991",9), /*5*/
+        ("Whole Lotta Red",1,"2020",24), /*6*/
+        ("Die Lit",1,"2018",19), /*7*/
+        ("MUSIC",1,"2025",30), /*8*/
+        ("1000 Eyes", 1, "2021", 13), /*9*/
+        ("Duality", 1, "2024", 15), /*10*/
+        ("SIGNALIS: MEMORIES", 1, "2024", 7), /*11*/
+        ("THE RAINBOW GOBLINS",1,"1981",14), /*12*/
+        ("FINGER DANCIN'",2,"2006",4), /*13*/
+        ("BRASILIAN SKY",1,"1978",8), /*14*/
+        ("ALL OF ME",1,"2006",14), /*15*/
+        ("Bátraké a szerencse",1,"2014",11), /*16*/
+        ("Az Száműzött",1,"2013",13), /*17*/
+        ("Napfény kell a világnak - Tegnap és ma",1,"2005",15), /*18*/
+        ("(((((ultraSOUND)))))", 1,"2025",15), /*19*/
+        ("Hard To Imagine The Neigbourhood Ever Changing", 1, "2018", 21), /*20*/
+        ("Thank you,", 3, "2012", 2) /*21*/
+        ("HOPE LEFT ME", 1, "2022", 12), /*22*/
+        ("Who Really Cares", 1, "2016", 10), /*23*/
+        ("Fauxllennium", 1,"2024",7), /*24*/
+        ("Summer's Over", 1, "2021", 7) /*25*/
+        
+
     ;
 /*------------------------------------------- SZERZŐK - ALBUMOK KÖTÉS---------------------------------------*/
 insert into artist_record(artist_id,record_id,`role`)
     values
+        /*Metallica*/
         (1,1,"producer"),
         (1,2,"producer"),
         (1,3,"producer"),
+        /*Michael J*/
         (2,4,"producer"),
         (2,5,"producer"),
+        /*playboi carti*/
         (3,6,"producer"),
         (3,7,"producer"),
         (3,8,"producer"),
+        /*1000 eyes*/
         (4,9,"producer"),
         (4,10,"producer"),
         (4,11,"producer"),
+        /*takanaka*/
         (5,12,"producer"),
         (5,13,"producer"),
         (5,14,"producer"),
         (5,15,"producer"),
+        /*karpatia*/
         (6,16,"producer"),
         (6,17,"producer"),
+        /*Korda György*/
         (7,18,"producer"),
+        /*The neighbourhood*/
         (8,19,"producer"),
         (8,20,"producer"),
         (8,21,"producer"),
+        /*Astrophysics*/
+        (9,22,"producer"),
+        /*tv girl*/
+        (10,23,"producer"),
+        (10,24,"producer"),
+        /*jordana*/
+        (11,25,"producer"),
+        (10,25,"featured")
+
     ;
