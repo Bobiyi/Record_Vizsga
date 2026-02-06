@@ -21,6 +21,7 @@ create table `record`(
 	type_id int,
 	release_year year,
 	`length` int
+	file_path varchar(255)
 );
 
 create table record_type (
