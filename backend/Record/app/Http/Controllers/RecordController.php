@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use App\Http\Resources\UserResource;
+
 use App\Models\Artist;
 use App\Http\Resources\ArtistResource;
 
@@ -10,10 +13,31 @@ use App\Http\Resources\RecordResource;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\CheckPasswordRequest;
 
 class RecordController extends Controller
 {
+
+    /**
+     * Checks if the recieved name and password matches a database record with the same name and hashed password.
+     * @param CheckPasswordRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function checkPass(CheckPasswordRequest $request) {
+        $data = $request->all();
+
+        $user = User::where('name', $data['name'])->first();
+
+        if(!$user) {
+            return response()->json(['message'=>'User not found!'], 403);
+        }
+
+        if(Hash::check($data['password'],$user->password_hash)) {
+            return response()->json(['message'=>'Password correct!', 'user' => UserResource::make($user)], 202);
+        } else {
+            return response()->json(['message'=>'Password incorrect!'], 403);
+        }
+    }
 
     /**
      * Returns all Records.
@@ -63,4 +87,6 @@ class RecordController extends Controller
 
         return response()->json($artistRes);
     }
+
+
 }

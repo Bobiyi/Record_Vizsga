@@ -9,6 +9,13 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+
+    public $table= "user";
+
+    public $timestamps = false;
+
+    protected $primaryKey = 'id';
+
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
@@ -20,7 +27,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'password',
+        'password_hash',
     ];
 
     /**
@@ -29,7 +36,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $hidden = [
-        'password',
+        'password_hash',
         'remember_token',
     ];
 
@@ -42,7 +49,6 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
         ];
     }
 }

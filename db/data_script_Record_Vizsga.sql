@@ -7,7 +7,7 @@ insert into record_type(type_name)
 ;
 
 /*------------------------------------------- ADMIN FELHASZNÁLÓ -------------------------------------------*/
-insert into `user`(id,password_hash,`name`,email,phone)
+insert into `user`(id,`name`,password_hash,email,phone)
     values(0,"admin","$2y$12$ETL70RA2OEi6gZcCLUb03u8xapsiDTmk96NpCq2k.xL9ckxJhW0BG","admin@record.hu","06309353729"); /*DO NOT REPLACE PASSWORD IT IS FINE*/
 
 /*------------------------------------------- SZERZŐK ------------------------------------------------------*/
