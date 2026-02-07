@@ -28,6 +28,8 @@ class Record extends Model
         return $this->type ? $this->type->type_name : null;
     }
 
+    //TODO - MANY TO MANY REALTION WITH ARTIST
+
     protected $fillable = [
         'name','type_id','release_year','length','file_path'
     ];
