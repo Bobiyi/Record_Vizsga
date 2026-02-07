@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class RecordResource extends JsonResource
@@ -14,6 +15,12 @@ class RecordResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'releaseYear' => $this->release_year,
+            'length' => $this->length,
+            'coverUrl' => $this->image_url,
+        ];
     }
 }

@@ -20,7 +20,7 @@ create table `record`(
 	`name` varchar(64) not null,
 	type_id int,
 	release_year year,
-	`length` int
+	`length` int,
 	file_path varchar(255)
 );
 

@@ -28,31 +28,31 @@ insert into artist(`name`,active_since,nationality,`url`,is_group)
 /*------------------------------------------- ALBUMOK ------------------------------------------------------*/
 insert into `record`(`name`,type_id,release_year,`length`,file_path)
     values
-        ("Master Of Puppets",1,"1986",8,"\Record_Vizsga\backend\Record\storage\app\public\Records\MasterOfPuppets.jpg"), /*1*/
-        ("Ride The Lightning",1,"1984",8,"\Record_Vizsga\backend\Record\storage\app\public\Records\RideTheLightning.jpg"), /*2*/
-        ("Reload",1,"1997",13,"\Record_Vizsga\backend\Record\storage\app\public\Records\Reload.jpg"), /*3*/
-        ("Bad",1,"1987",9,"\Record_Vizsga\backend\Record\storage\app\public\Records\Bad.jpg"), /*4*/
-        ("Dangerous",1,"1991",9,"\Record_Vizsga\backend\Record\storage\app\public\Records\Dangerous.jpg"), /*5*/
-        ("Whole Lotta Red",1,"2020",24,"\Record_Vizsga\backend\Record\storage\app\public\Records\WholeLottaRed.jpg"), /*6*/
-        ("Die Lit",1,"2018",19,"\Record_Vizsga\backend\Record\storage\app\public\Records\DieLit.jpg"), /*7*/
-        ("MUSIC",1,"2025",30,"\Record_Vizsga\backend\Record\storage\app\public\Records\MUSIC.jpg"), /*8*/
-        ("1000 Eyes", 1, "2021", 13,"\Record_Vizsga\backend\Record\storage\app\public\Records\1000Eyes.jpg"), /*9*/
-        ("Duality", 1, "2024", 15,"\Record_Vizsga\backend\Record\storage\app\public\Records\Duality.jpg"), /*10*/
-        ("SIGNALIS: MEMORIES", 1, "2024", 7,"\Record_Vizsga\backend\Record\storage\app\public\Records\SignalisMemories.jpg"), /*11*/
-        ("THE RAINBOW GOBLINS",1,"1981",14,"\Record_Vizsga\backend\Record\storage\app\public\Records\TheRainbowGoblins.jpg"), /*12*/
-        ("FINGER DANCIN'",2,"2006",4,"\Record_Vizsga\backend\Record\storage\app\public\Records\FingerDancin.jpg"), /*13*/
-        ("BRASILIAN SKIES",1,"1978",8,"\Record_Vizsga\backend\Record\storage\app\public\Records\BrasilianSkies.jpg"), /*14*/
-        ("ALL OF ME",1,"2006",14,"\Record_Vizsga\backend\Record\storage\app\public\Records\AllOfMe.jpg"), /*15*/
-        ("Bátraké a szerencse",1,"2014",11,"\Record_Vizsga\backend\Record\storage\app\public\Records\BatrakeASzerencse.jpg"), /*16*/
-        ("A Száműzött",1,"2013",13,"\Record_Vizsga\backend\Record\storage\app\public\Records\ASzamuzott.jpg"), /*17*/
-        ("Napfény kell a világnak - Tegnap és ma",1,"2005",15,"\Record_Vizsga\backend\Record\storage\app\public\Records\NapfenyKellAVilagnakTegnapEsMa.jpg"), /*18*/
-        ("(((((ultraSOUND)))))", 1,"2025",15,"\Record_Vizsga\backend\Record\storage\app\public\Records\UltraSound.jpg"), /*19*/
-        ("Hard To Imagine The Neigbourhood Ever Changing", 1, "2018", 21,"\Record_Vizsga\backend\Record\storage\app\public\Records\HardToImagineTheNeigbourhoodEverChanging.jpg"), /*20*/
-        ("Thank you,", 3, "2012", 2,"\Record_Vizsga\backend\Record\storage\app\public\Records\Thankyou.jpg"), /*21*/
-        ("HOPE LEFT ME", 1, "2022", 12,"\Record_Vizsga\backend\Record\storage\app\public\Records\HopeLeftMe.jpg"), /*22*/
-        ("Who Really Cares", 1, "2016", 10,"\Record_Vizsga\backend\Record\storage\app\public\Records\WhoReallyCares.jpg"), /*23*/
-        ("Fauxllennium", 1,"2024",7,"\Record_Vizsga\backend\Record\storage\app\public\Records\Fauxllennium.jpg"), /*24*/
-        ("Summer's Over", 1, "2021", 7,"\Record_Vizsga\backend\Record\storage\app\public\Records\SummersOver.jpg") /*25*/
+        ("Master Of Puppets",1,"1986",8,"Records/MasterOfPuppets.jpg"), /*1*/
+        ("Ride The Lightning",1,"1984",8,"Records/RideTheLightning.jpg"), /*2*/
+        ("Reload",1,"1997",13,"Records/Reload.jpg"), /*3*/
+        ("Bad",1,"1987",9,"Records/Bad.jpg"), /*4*/
+        ("Dangerous",1,"1991",9,"Records/Dangerous.jpg"), /*5*/
+        ("Whole Lotta Red",1,"2020",24,"Records/WholeLottaRed.jpg"), /*6*/
+        ("Die Lit",1,"2018",19,"Records/DieLit.jpg"), /*7*/
+        ("MUSIC",1,"2025",30,"Records/MUSIC.jpg"), /*8*/
+        ("1000 Eyes", 1, "2021", 13,"Records/1000Eyes.jpg"), /*9*/
+        ("Duality", 1, "2024", 15,"Records/Duality.jpg"), /*10*/
+        ("SIGNALIS: MEMORIES", 1, "2024", 7,"Records/SignalisMemories.jpg"), /*11*/
+        ("THE RAINBOW GOBLINS",1,"1981",14,"Records/TheRainbowGoblins.jpg"), /*12*/
+        ("FINGER DANCIN'",2,"2006",4,"Records/FingerDancin.jpg"), /*13*/
+        ("BRASILIAN SKIES",1,"1978",8,"Records/BrasilianSkies.jpg"), /*14*/
+        ("ALL OF ME",1,"2006",14,"Records/AllOfMe.jpg"), /*15*/
+        ("Bátraké a szerencse",1,"2014",11,"Records/BatrakeASzerencse.jpg"), /*16*/
+        ("A Száműzött",1,"2013",13,"Records/ASzamuzott.jpg"), /*17*/
+        ("Napfény kell a világnak - Tegnap és ma",1,"2005",15,"Records/NapfenyKellAVilagnakTegnapEsMa.jpg"), /*18*/
+        ("(((((ultraSOUND)))))", 1,"2025",15,"Records/UltraSound.jpg"), /*19*/
+        ("Hard To Imagine The Neigbourhood Ever Changing", 1, "2018", 21,"Records/HardToImagineTheNeigbourhoodEverChanging.jpg"), /*20*/
+        ("Thank you,", 3, "2012", 2,"Records/Thankyou.jpg"), /*21*/
+        ("HOPE LEFT ME", 1, "2022", 12,"Records/HopeLeftMe.jpg"), /*22*/
+        ("Who Really Cares", 1, "2016", 10,"Records/WhoReallyCares.jpg"), /*23*/
+        ("Fauxllennium", 1,"2024",7,"Records/Fauxllennium.jpg"), /*24*/
+        ("Summer's Over", 1, "2021", 7,"Records/SummersOver.jpg") /*25*/
         
 
     ;
