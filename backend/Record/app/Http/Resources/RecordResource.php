@@ -18,6 +18,7 @@ class RecordResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
+            'typeName'=>$this->type?->type_name,
             'releaseYear' => $this->release_year,
             'length' => $this->length,
             'coverUrl' => $this->image_url,
