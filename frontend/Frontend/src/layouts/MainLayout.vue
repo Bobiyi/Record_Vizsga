@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="hHh lpR fFf">
     <q-header  class="header">
       <q-toolbar>
         <q-btn flat dense round icon="menu" aria-label="Menu" @click="toggleLeftDrawer" />
@@ -15,13 +15,19 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer v-model="leftDrawerOpen" show-if-above class="drawer">
-      <q-list>
-        <q-item-label header></q-item-label>
-
-        <EssentialLink v-for="link in linksList" :key="link.title" v-bind="link" />
-      </q-list>
-    </q-drawer>
+     <q-drawer show-if-above v-model="leftDrawerOpen" side="left" class="drawer" :width="150">
+        <!-- drawer content -->
+        <q-scroll-area class="fit">
+          <q-btn align="left" class="full-width q-ma-xs drwropt" :class="{ active: $route.path === '/' }" clickable flat
+            icon="mdi-home" label="Fő oldal" no-caps to="/"/>
+          <q-btn align="left" class="full-width q-ma-xs drwropt" :class="{ active: $route.path === '/profile' }" clickable flat
+            icon="mdi-account" label="Profil" no-caps to="/profile" />
+            <q-btn align="left" class="full-width q-ma-xs drwropt" :class="{ active: $route.path === '/artists' }" clickable flat
+            icon="mdi-account-music" label="Zenészek" no-caps to="/artists" />
+            <q-btn align="left" class="full-width q-ma-xs drwropt" :class="{ active: $route.path === '/albums' }" clickable flat
+            icon="mdi-album" label="Kiadások" no-caps to="/albums" />
+        </q-scroll-area>    
+      </q-drawer>
 
     <q-page-container class="content">
       <router-view />
@@ -31,54 +37,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import EssentialLink from 'components/EssentialLink.vue'
 
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-]
 
-const leftDrawerOpen = ref(false)
+const leftDrawerOpen = ref(true)
 
 function toggleLeftDrawer() {
   leftDrawerOpen.value = !leftDrawerOpen.value
@@ -101,5 +62,10 @@ function toggleLeftDrawer() {
   background-color: $darker;
   color: $deep-purple-13;
   border-right: 1px ridge $deep-purple-13 ;
+  width: 200px;
+}
+.drwropt{
+  border-top: 1px solid $deep-purple-13;
+  box-shadow: 10px 0 1px 1px $deep-purple-13 inset;
 }
 </style>

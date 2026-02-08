@@ -4,6 +4,23 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
+    {
+    path: '/profile',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/ProfilePage.vue') }],
+  },
+    {
+    path: '/artists',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/ArtistsPage.vue') }],
+  },
+    {
+    path: '/albums',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/AlbumsPage.vue') }],
+  },
+
+  
 
   // Always leave this as last one,
   // but you can also remove it

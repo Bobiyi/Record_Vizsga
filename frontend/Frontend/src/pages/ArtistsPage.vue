@@ -1,7 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <h1 style="color: white;">lowkey kellene webdesign-t néznem / lopnom</h1>
-
+    <h1>ARTISKÁK</h1>
   </q-page>
 </template>
 
