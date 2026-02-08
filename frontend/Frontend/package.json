@@ -17,6 +17,8 @@
   "dependencies": {
     "@mdi/js": "^7.4.47",
     "@quasar/extras": "^1.16.4",
+    "axios": "^1.13.5",
+    "pinia": "^3.0.4",
     "quasar": "^2.16.0",
     "vue": "^3.5.22",
     "vue-router": "^4.0.0"
