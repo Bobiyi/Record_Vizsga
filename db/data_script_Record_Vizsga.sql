@@ -15,7 +15,7 @@ insert into artist(`name`,active_since,nationality,`url`,is_group)
     values
         ("Metallica","1981","usa","https://www.metallica.com",1), /*1*/
         ("Michael Jackson","1964","usa","https://www.michaeljackson.com",0), /*2*/
-        ("Playboi Carti","2015","usa",null,0), /*3*/
+        ("Playboi Carti","2015","usa","https://soundcloud.com/playboicarti",0), /*3*/
         ("1000 Eyes", "2021", null, "https://thousandeyes.bandcamp.com", 0), /*4*/
         ("Masayoshi Takanaka","1970","jpn","https://takanaka.com",0), /*5*/
         ("Kárpátia","2003","hun","https://www.karpatiazenekar.hu",0), /*6*/
@@ -23,7 +23,9 @@ insert into artist(`name`,active_since,nationality,`url`,is_group)
         ("The Neighbourhood", "2011", "usa", "https://tour.thenbhd.com",1), /*8*/
         ("Astrophysics", "2018", "bra", "https://astrophysicsbrazil.bandcamp.com/music", 1), /*9*/
         ("TV Girl", "2013", "usa", "https://tvgirl.bandcamp.com",1), /*10*/
-        ("Jordana", "2018", "usa","https://jordana.cool",0) /*11*/
+        ("Jordana", "2018", "usa","https://jordana.cool",0), /*11*/
+        ("Julie", "2020", "usa", "https://julie.bandcamp.com", 1), /*12*/
+        ("WEDNESDAY CAMPANELLA", "2013", "jpn", null, 1) /*13*/
     ;
 /*------------------------------------------- ALBUMOK ------------------------------------------------------*/
 insert into `record`(`name`,type_id,release_year,`length`,file_path)
@@ -52,7 +54,14 @@ insert into `record`(`name`,type_id,release_year,`length`,file_path)
         ("HOPE LEFT ME", 1, "2022", 12,"Records/HopeLeftMe.jpg"), /*22*/
         ("Who Really Cares", 1, "2016", 10,"Records/WhoReallyCares.jpg"), /*23*/
         ("Fauxllennium", 1,"2024",7,"Records/Fauxllennium.jpg"), /*24*/
-        ("Summer's Over", 1, "2021", 7,"Records/SummersOver.jpg") /*25*/
+        ("Summer's Over", 1, "2021", 7,"Records/SummersOver.jpg"), /*25*/
+        ("flutter", 3, "2020", 1,"Records/Flutter.jpg"), /*26*/
+        ("starjump/kit", 3, "2020", 2,"Records/StarjumpKit.jpg"), /*27*/
+        ("pushing daisies", 2, "2021", 6,"Records/PushingDaisies.jpg"), /*28*/
+        ("my anti-aircraft friend", 1, "2024", 10,"Records/MyAntiAircraftFriend.jpg"), /*29*/
+        ("Kawaii girl", 1, "2025", 8,"Records/KawaiiGirl.jpg"), /*30*/
+        ("POP DELIVERY", 1, "2024", 8,"Records/PopDelivery.jpg"), /*31*/
+        ("Summer Time Ghost", 3, "2025", 1,"Records/SummerTimeGhost.jpg") /*32*/
         
 
     ;
@@ -95,6 +104,15 @@ insert into artist_record(artist_id,record_id,`role`)
         (10,24,"producer"),
         /*jordana*/
         (11,25,"producer"),
-        (10,25,"featured")
+        (10,25,"featured"),
+        /*julie*/
+        (12,26,"producer"),
+        (12,27,"producer"),
+        (12,28,"producer"),
+        (12,29,"producer"),
+        /*WEDNESDAY CAMPANELLA*/
+        (13,30,"producer"),
+        (13,31,"producer"),
+        (13,32,"producer"),
 
     ;
