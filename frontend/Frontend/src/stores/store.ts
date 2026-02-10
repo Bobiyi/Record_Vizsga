@@ -5,16 +5,15 @@ import { api } from "src/boot/axios";
 export interface IProduct {
   id?: number;
   name?: string;
-  price?: number;
-  db?: number;
-  akcios?: boolean;
-  ertekeles?: number;
-  kategoriaId?: number;
+  typeName?: string;
+  releaseYear?: number;
+  length?: number;
+  coverUrl?: string;
 }
 
 interface IState {
   products: IProduct[];
-  selected: IProduct | null;
+  selected: IProduct;
   cart: IProduct[];
   original: IProduct | null;
   loading: boolean;
@@ -22,7 +21,7 @@ interface IState {
 }
 
 // STORE
-export const useStore = defineStore("products", {
+export const useStore = defineStore("records", {
   state: (): IState => ({
     products: [],
     selected: null,
@@ -33,39 +32,19 @@ export const useStore = defineStore("products", {
   }),
 
   getters: {
-    totalPrice: (state) =>
-      state.cart.reduce((sum, item) => sum + (item.price || 0) * (item.db || 0), 0),
+
   },
 
   actions: {
-    // --- 0. Termék hozzáadása a kosárhoz ---
-    addToCart(product: IProduct) {
-      const existing = this.cart.find((item) => item.id === product.id);
-      if (existing) {
-        existing.db = (existing.db || 0) + 1;
-      } else {
-        this.cart.push({ ...product, db: 1 });
-      }
-    },
 
-    removeFromCart(product: IProduct) {
-      const existingIndex = this.cart.findIndex((item) => item.id === product.id);
-      if (existingIndex !== -1) {
-        const existing = this.cart[existingIndex];
-        if (existing && (existing.db || 0) > 1) {
-          existing.db!--;
-        } else {
-          this.cart.splice(existingIndex, 1);
-        }
-      }
-    },
+
 
     // --- 1. Összes termék lekérése ---
-    async getProducts() {
+    async getRecords() {
       this.loading = true;
       try {
-        const res = await api.get("/products");
-        this.products = res.data;
+        const res = await api.get("/records");
+        this.records = res.data;
         this.error = null;
       } catch (err) {
         console.log("Hiba a termékek betöltésekor:", err);
@@ -76,12 +55,11 @@ export const useStore = defineStore("products", {
     },
 
     // --- 2. Egy termék lekérése ---
-    async getProductById(id: number) {
+    async getRecordById(id: number): Promise<void> {
       this.loading = true;
       try {
-        const res = await api.get(`/products/${id}`);
+        const res = await api.get(`/records/${id}`);
         this.selected = res.data;
-        this.original = { ...res.data };
         this.error = null;
       } catch (err) {
         console.log("Hiba a termék lekérésekor:", err);
@@ -92,47 +70,15 @@ export const useStore = defineStore("products", {
     },
 
     // --- 3. Új termék létrehozása ---
-    async createProduct(product: IProduct) {
+    async createRecord(product: IProduct) {
       try {
-        await api.post("/products", product);
+        await api.post("/records", product);
         this.getProducts();
       } catch (err) {
         console.log("Hiba termék létrehozásakor:", err);
       }
     },
 
-    // --- 4. Termék módosítása (diff) ---
-    async updateProduct() {
-      if (!this.selected || !this.original) return;
-
-      const diff: Partial<IProduct> = {};
-      (Object.keys(this.selected) as (keyof IProduct)[]).forEach((key) => {
-        if (this.selected && this.original && this.selected[key] !== this.original[key]) {
-          (diff as any)[key] = this.selected[key];
-        }
-      });
-
-      if (Object.keys(diff).length === 0) {
-        console.log("Nincs változás a terméken.");
-        return;
-      }
-
-      try {
-        await api.patch(`/products/${this.selected.id}`, diff);
-        this.getProducts();
-      } catch (err) {
-        console.log("Hiba termék módosításakor:", err);
-      }
-    },
-
-    // --- 5. Termék törlése ---
-    async deleteProduct(id: number) {
-      try {
-        await api.delete(`/products/${id}`);
-        this.getProducts();
-      } catch (err) {
-        console.log("Hiba termék törlésekor:", err);
-      }
-    },
+    
   },
 });

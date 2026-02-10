@@ -1,9 +1,39 @@
+<script setup>
+import { useStore } from "../stores/store";
+import { onMounted } from "vue";
+
+const store = useStore();
+
+onMounted(() => {
+  store.getRecords();
+});
+
+
+
+</script>
+
 <template>
   <q-page class="flex flex-center">
-    <h1>ALBUMOK</h1>
+    <div class="q-pa-md row q-gutter-md">
+         <q-card class="recordCard" flat bordered v-for="record in store.records" :key="record.id">
+               <img :src="record.coverUrl">
+         
+
+          
+          <q-card-section>
+
+            <router-link :to="`../records/${record.id}`" >   {{ record.name }}</router-link>
+          </q-card-section>
+          </q-card>
+    </div>
   </q-page>
 </template>
 
-<script setup>
-//
-</script>
+<style lang="scss">
+.recordCard{
+  width: 100%;
+  max-width: 20em;
+}
+</style>
+
+

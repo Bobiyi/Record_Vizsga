@@ -14,15 +14,21 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/ArtistsPage.vue') }],
   },
-    {
-    path: '/albums',
+  {
+    path: '/records',
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/AlbumsPage.vue') }],
+  },
+  {
+    path: '/records/:id',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/AlbumIndividualPage.vue') }],
+    props: true,
   },
 
   
 
-  // Always leave this as last one,
+  // Always leave this as last one,0
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',

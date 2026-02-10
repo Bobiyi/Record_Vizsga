@@ -24,8 +24,8 @@
             icon="mdi-account" label="Profil" no-caps to="/profile" />
             <q-btn align="left" class="full-width q-ma-xs drwropt" :class="{ active: $route.path === '/artists' }" clickable flat
             icon="mdi-account-music" label="Zenészek" no-caps to="/artists" />
-            <q-btn align="left" class="full-width q-ma-xs drwropt" :class="{ active: $route.path === '/albums' }" clickable flat
-            icon="mdi-album" label="Kiadások" no-caps to="/albums" />
+            <q-btn align="left" class="full-width q-ma-xs drwropt" :class="{ active: $route.path === '/records' }" clickable flat
+            icon="mdi-album" label="Kiadások" no-caps to="/records" />
         </q-scroll-area>    
       </q-drawer>
 
