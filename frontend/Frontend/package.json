@@ -1,9 +1,9 @@
 {
   "name": "frontend",
   "version": "0.0.1",
-  "description": "A Quasar Project",
+  "description": "Vizsga Remek",
   "productName": "Record",
-  "author": "",
+  "author": "Kiss Erik",
   "type": "module",
   "private": true,
   "scripts": {
