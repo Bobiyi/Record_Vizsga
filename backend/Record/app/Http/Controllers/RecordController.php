@@ -89,4 +89,16 @@ class RecordController extends Controller
     }
 
 
+    /**
+     * Return a given Records All Artists
+     * @param int $recordId
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getRecordsArtists(int $recordId) {
+        $record = Record::with('artists')->findOrFail($recordId);
+
+        return response()->json(ArtistResource::collection($record->artists));
+    }
+
+
 }

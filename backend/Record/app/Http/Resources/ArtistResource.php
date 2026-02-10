@@ -14,13 +14,19 @@ class ArtistResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return[
+        $data = [
             'id' => $this->id,
             'artistName' =>$this->name,
             'activeSince' =>$this->active_since,
             'nationality' =>$this->nationality,
             'website' => $this ->url,
-            'isGroup' => $this->is_group
+            'isGroup' => $this->is_group,
         ];
+
+        if ($this->pivot) {
+            $data['role'] = $this->pivot->role;
+        }
+
+        return $data;
     }
 }

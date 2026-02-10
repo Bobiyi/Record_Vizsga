@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Models\RecordType;
 
 class Record extends Model
 {
@@ -18,10 +18,9 @@ class Record extends Model
     public function getImageUrlAttribute() {
         return asset('storage/'.$this->file_path);
     }
-
-
-    public function type(): BelongsTo {
-        return $this->BelongsTo(RecordType::class,'type_id');
+    
+    public function artists(): BelongsToMany {
+        return $this->belongsToMany(Artist::class,'artist_record')->withPivot('role');
     }
 
     public function getTypeNameAttribute() {
