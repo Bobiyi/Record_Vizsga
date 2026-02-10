@@ -113,6 +113,6 @@ insert into artist_record(artist_id,record_id,`role`)
         /*WEDNESDAY CAMPANELLA*/
         (13,30,"producer"),
         (13,31,"producer"),
-        (13,32,"producer"),
+        (13,32,"producer")
 
     ;
