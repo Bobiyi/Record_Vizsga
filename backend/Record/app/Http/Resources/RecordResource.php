@@ -22,6 +22,7 @@ class RecordResource extends JsonResource
             'releaseYear' => $this->release_year,
             'length' => $this->length,
             'coverUrl' => $this->image_url,
+            'artistName' => $this->artists->pluck('name')
         ];
     }
 }

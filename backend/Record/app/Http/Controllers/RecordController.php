@@ -44,7 +44,7 @@ class RecordController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function getRecords(){
-        $list = Record::all();
+        $list = Record::with('artists')->get();
         $listRes = RecordResource::collection($list);
 
         return response()->json($listRes);
@@ -56,7 +56,7 @@ class RecordController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function getRecord(int $id) {
-        $record = Record::findOrFail($id);
+        $record = Record::with('artists')->findOrFail($id);
 
         $recordRes = RecordResource::make($record);
 
