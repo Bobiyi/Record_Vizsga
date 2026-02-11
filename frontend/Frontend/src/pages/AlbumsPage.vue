@@ -1,8 +1,8 @@
 <script setup>
-import { useStore } from "../stores/store";
+import { useRecordStore } from "../stores/store";
 import { onMounted } from "vue";
 
-const store = useStore();
+const store = useRecordStore();
 
 onMounted(() => {
   store.getRecords();

@@ -14,6 +14,12 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/ArtistsPage.vue') }],
   },
+      {
+    path: '/artists/:id',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/ArtistIndividualPage.vue') }],
+    props: true,
+  },
   {
     path: '/records',
     component: () => import('layouts/MainLayout.vue'),
