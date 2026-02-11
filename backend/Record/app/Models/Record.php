@@ -18,6 +18,11 @@ class Record extends Model
     public function getImageUrlAttribute() {
         return asset('storage/'.$this->file_path);
     }
+
+
+   public function type(): BelongsTo {
+    return $this->BelongsTo(RecordType::class,"type_id");
+   }
     
     public function artists(): BelongsToMany {
         return $this->belongsToMany(Artist::class,'artist_record')->withPivot('role');
