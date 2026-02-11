@@ -11,22 +11,24 @@ insert into `user`(id,`name`,password_hash,email,phone)
     values(0,"admin","$2y$12$ETL70RA2OEi6gZcCLUb03u8xapsiDTmk96NpCq2k.xL9ckxJhW0BG","admin@record.hu","06309353729"); /*DO NOT REPLACE PASSWORD IT IS FINE*/
 
 /*------------------------------------------- SZERZŐK ------------------------------------------------------*/
-insert into artist(`name`,active_since,nationality,`url`,is_group)
+insert into artist(`name`,active_since,nationality,`url`,is_group, file_path)
     values
-        ("Metallica","1981","usa","https://www.metallica.com",1), /*1*/
-        ("Michael Jackson","1964","usa","https://www.michaeljackson.com",0), /*2*/
-        ("Playboi Carti","2015","usa","https://soundcloud.com/playboicarti",0), /*3*/
-        ("1000 Eyes", "2021", null, "https://thousandeyes.bandcamp.com", 0), /*4*/
-        ("Masayoshi Takanaka","1970","jpn","https://takanaka.com",0), /*5*/
-        ("Kárpátia","2003","hun","https://www.karpatiazenekar.hu",0), /*6*/
-        ("Korda György","1958","hun",null,0), /*7*/
-        ("The Neighbourhood", "2011", "usa", "https://tour.thenbhd.com",1), /*8*/
-        ("Astrophysics", "2018", "bra", "https://astrophysicsbrazil.bandcamp.com/music", 1), /*9*/
-        ("TV Girl", "2013", "usa", "https://tvgirl.bandcamp.com",1), /*10*/
-        ("Jordana", "2018", "usa","https://jordana.cool",0), /*11*/
-        ("Julie", "2020", "usa", "https://julie.bandcamp.com", 1), /*12*/
-        ("WEDNESDAY CAMPANELLA", "2013", "jpn", null, 1), /*13*/
-        ("MASS OF THE FERMENTING DREGS", "2006", "jpn", "https://www.motfd.com/", 1) /*14*/
+        ("Metallica",                       "1981", "usa",  "https://www.metallica.com",            1,  "Metallica"), /*1*/
+        ("Michael Jackson",                 "1964", "usa",  "https://www.michaeljackson.com",       0,  "Artists/MichaelJackson"), /*2*/
+        ("Playboi Carti",                   "2015", "usa",  "https://soundcloud.com/playboicarti",  0,  "Artists/PlayboiCarti"), /*3*/
+        ("1000 Eyes",                       "2021", null,   "https://thousandeyes.bandcamp.com",    0,  "Artists/1000Eyes"), /*4*/
+        ("Masayoshi Takanaka",              "1970", "jpn",  "https://takanaka.com",                 0,  "Artists/MasayoshiTakanaka"), /*5*/
+        ("Kárpátia",                        "2003", "hun",  "https://www.karpatiazenekar.hu",       0,  "Artists/Karpatia"), /*6*/
+        ("Korda György",                    "1958", "hun",  null,                                   0,  "KordaGyorgy"), /*7*/
+        ("The Neighbourhood",               "2011", "usa",  "https://tour.thenbhd.com",             1,  "Artists/TheNeighbourhood"), /*8*/
+        ("Astrophysics",                    "2018", "bra",  "https://astrophysicsbrazil.bandcamp.com/music", 1, "Artists/Astrophysics"), /*9*/
+        ("TV Girl",                         "2013", "usa",  "https://tvgirl.bandcamp.com",          1,  "Artists/TVGirl"), /*10*/
+        ("Jordana",                         "2018", "usa",  "https://jordana.cool",                 0,  "Artists/Jordana"), /*11*/
+        ("Julie",                           "2020", "usa",  "https://julie.bandcamp.com",           1,  "Artists/Julie"), /*12*/
+        ("WEDNESDAY CAMPANELLA",            "2013", "jpn",  null,                                   1,  "Artists/WednesdayCampanella"), /*13*/
+        ("MASS OF THE FERMENTING DREGS",    "2006", "jpn",  "https://www.motfd.com/",               1,  "Artists/MassOfTheFermentingDregs"), /*14*/
+        ("mollywood",                       "2024", "hun",  "https://astromusic.hu/band/mollywood/",0,  "Artists/Mollywood"), /*15*/
+        ("Irina",                           "2023", "hun",  "https://soundcloud.com/edina-nagy-865719925",0,  "Artists/Irina"), /*16*/
 
     ;
 /*------------------------------------------- ALBUMOK ------------------------------------------------------*/
@@ -66,8 +68,13 @@ insert into `record`(`name`,type_id,release_year,`length`,file_path)
         ("Kawaii girl", 1, "2025", 8,"Records/KawaiiGirl.jpg"), /*30*/
         ("POP DELIVERY", 1, "2024", 8,"Records/PopDelivery.jpg"), /*31*/
         ("Summer Time Ghost", 3, "2025", 1,"Records/SummerTimeGhost.jpg"), /*32*/
-        ("World Is Yours", 2, "2009", 6, "Records/WorldIsYours.jpg") /*33*/
-
+        ("World Is Yours", 2, "2009", 6, "Records/WorldIsYours.jpg"), /*33*/
+        ("MASS OF THE FERMENTING DREGS", 2, "2008", 6, "Records/MassOfTheFermentingDregs.jpg"), /*34*/
+        ("Larissza Radio", 1, "2025", 9, "Records/LarisszaRadio.jpg"), /*35*/
+        ("Europa", 1, "2025", 11, "Records/Europa.jpg"), /*36*/
+        ("gyógynövény", 3, "2023", 1, "Records/Gyogynoveny.jpg"), /*37*/
+        ("dohányozni tilos", 1, "2024", 9, "Records/DohanyozniTilos.jpg"), /*38*/
+        ("halovány", 3, "2025", 1, "Records/Halovany.jpg") /*39*/
     ;
 /*------------------------------------------- SZERZŐK - ALBUMOK KÖTÉS---------------------------------------*/
 insert into artist_record(artist_id,record_id,`role`)
@@ -119,7 +126,14 @@ insert into artist_record(artist_id,record_id,`role`)
         (13,31,"producer"),
         (13,32,"producer"),
         /*MASS OF THE FERMENTING DREGS*/
-        (14,33,"producer")
-
+        (14,33,"producer"),
+        (14,34,"producer"),
+        /*mollywood*/
+        (15,35,"producer"),
+        (15,36,"producer"),
+        /*Irina*/
+        (17,37,"producer"),
+        (17,38,"producer"),
+        (17,39,"producer")
     ;
 /*!!!!!ARTIST_ID - RECORD_ID!!!!!*/
