@@ -49,7 +49,7 @@ insert into `record`(`name`,type_id,release_year,`length`,file_path)
         ("A Száműzött",1,"2013",13,"Records/ASzamuzott.jpg"), /*17*/
         ("Napfény kell a világnak - Tegnap és ma",1,"2005",15,"Records/NapfenyKellAVilagnakTegnapEsMa.jpg"), /*18*/
         ("(((((ultraSOUND)))))", 1,"2025",15,"Records/UltraSound.jpg"), /*19*/
-        ("Hard To Imagine The Neigbourhood Ever Changing", 1, "2018", 21,"Records/HardToImagineTheNeigbourhoodEverChanging.jpg"), /*20*/
+        ("Hard To Imagine The Neighbourhood Ever Changing", 1, "2018", 21,"Records/HardToImagineTheNeighbourhoodEverChanging.jpg"), /*20*/
         ("Thank you,", 3, "2012", 2,"Records/Thankyou.jpg"), /*21*/
         ("HOPE LEFT ME", 1, "2022", 12,"Records/HopeLeftMe.jpg"), /*22*/
         ("Who Really Cares", 1, "2016", 10,"Records/WhoReallyCares.jpg"), /*23*/
