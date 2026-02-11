@@ -12,7 +12,8 @@ create table artist(
 	active_since year,
 	nationality varchar(64),
 	`url` varchar(128),
-	is_group int(1)
+	is_group int(1),
+	file_path varchar(255)
 );
 
 create table `record`(

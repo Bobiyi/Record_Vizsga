@@ -25,9 +25,13 @@ insert into artist(`name`,active_since,nationality,`url`,is_group)
         ("TV Girl", "2013", "usa", "https://tvgirl.bandcamp.com",1), /*10*/
         ("Jordana", "2018", "usa","https://jordana.cool",0), /*11*/
         ("Julie", "2020", "usa", "https://julie.bandcamp.com", 1), /*12*/
-        ("WEDNESDAY CAMPANELLA", "2013", "jpn", null, 1) /*13*/
+        ("WEDNESDAY CAMPANELLA", "2013", "jpn", null, 1), /*13*/
+        ("MASS OF THE FERMENTING DREGS", "2006", "jpn", "https://www.motfd.com/", 1) /*14*/
+
     ;
 /*------------------------------------------- ALBUMOK ------------------------------------------------------*/
+/* copy paste template:   ("", , "", , "Records/.jpg"), /**/    */
+
 insert into `record`(`name`,type_id,release_year,`length`,file_path)
     values
         ("Master Of Puppets",1,"1986",8,"Records/MasterOfPuppets.jpg"), /*1*/
@@ -61,8 +65,8 @@ insert into `record`(`name`,type_id,release_year,`length`,file_path)
         ("my anti-aircraft friend", 1, "2024", 10,"Records/MyAntiAircraftFriend.jpg"), /*29*/
         ("Kawaii girl", 1, "2025", 8,"Records/KawaiiGirl.jpg"), /*30*/
         ("POP DELIVERY", 1, "2024", 8,"Records/PopDelivery.jpg"), /*31*/
-        ("Summer Time Ghost", 3, "2025", 1,"Records/SummerTimeGhost.jpg") /*32*/
-        
+        ("Summer Time Ghost", 3, "2025", 1,"Records/SummerTimeGhost.jpg"), /*32*/
+        ("World Is Yours", 2, "2009", 6, "Records/WorldIsYours.jpg") /*33*/
 
     ;
 /*------------------------------------------- SZERZŐK - ALBUMOK KÖTÉS---------------------------------------*/
@@ -72,7 +76,7 @@ insert into artist_record(artist_id,record_id,`role`)
         (1,1,"producer"),
         (1,2,"producer"),
         (1,3,"producer"),
-        /*Michael J*/
+        /*Michael Jackson*/
         (2,4,"producer"),
         (2,5,"producer"),
         /*playboi carti*/
@@ -113,7 +117,9 @@ insert into artist_record(artist_id,record_id,`role`)
         /*WEDNESDAY CAMPANELLA*/
         (13,30,"producer"),
         (13,31,"producer"),
-        (13,32,"producer")
+        (13,32,"producer"),
+        /*MASS OF THE FERMENTING DREGS*/
+        (14,33,"producer")
 
     ;
 /*!!!!!ARTIST_ID - RECORD_ID!!!!!*/
