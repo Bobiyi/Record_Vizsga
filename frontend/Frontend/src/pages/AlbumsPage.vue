@@ -17,9 +17,7 @@ onMounted(() => {
     <div class="q-pa-md row q-gutter-md">
          <q-card class="recordCard" flat bordered v-for="record in store.records" :key="record.id">
                <img :src="record.coverUrl">
-         
 
-          
           <q-card-section>
 
             <router-link :to="`../records/${record.id}`" >   {{ record.name }}</router-link>

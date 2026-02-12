@@ -1,10 +1,10 @@
 <script setup>
 import { Loading } from "quasar";
-import { useStore } from "../stores/store";
+import { useRecordStore } from "../stores/store";
 import { onMounted } from "vue";
 import { useRoute } from 'vue-router'
   const route = useRoute();
-  const store = useStore();
+  const store = useRecordStore();
   const urlId = route.params.id
 
   const startLoading = () =>{

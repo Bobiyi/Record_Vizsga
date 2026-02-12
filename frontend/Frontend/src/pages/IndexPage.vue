@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex flex-center">
-    <h1 style="color: white;">lowkey kellene webdesign-t néznem / lopnom</h1>
+    <img style="width: 400px; height: 400px;" src="https://cataas.com/cat" alt="">
 
   </q-page>
 </template>
