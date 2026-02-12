@@ -28,7 +28,7 @@ insert into artist(`name`,active_since,nationality,`url`,is_group, file_path)
         ("WEDNESDAY CAMPANELLA",            "2013", "jpn",  null,                                   1,  "Artists/WednesdayCampanella"), /*13*/
         ("MASS OF THE FERMENTING DREGS",    "2006", "jpn",  "https://www.motfd.com/",               1,  "Artists/MassOfTheFermentingDregs"), /*14*/
         ("mollywood",                       "2024", "hun",  "https://astromusic.hu/band/mollywood/",0,  "Artists/Mollywood"), /*15*/
-        ("Irina",                           "2023", "hun",  "https://soundcloud.com/edina-nagy-865719925",0,  "Artists/Irina"), /*16*/
+        ("Irina",                           "2023", "hun",  "https://soundcloud.com/edina-nagy-865719925",0,  "Artists/Irina") /*16*/
 
     ;
 /*------------------------------------------- ALBUMOK ------------------------------------------------------*/
@@ -132,8 +132,8 @@ insert into artist_record(artist_id,record_id,`role`)
         (15,35,"producer"),
         (15,36,"producer"),
         /*Irina*/
-        (17,37,"producer"),
-        (17,38,"producer"),
+        (16,37,"producer"),
+        (16,38,"producer"),
         (17,39,"producer")
     ;
 /*!!!!!ARTIST_ID - RECORD_ID!!!!!*/
