@@ -2,19 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use App\Http\Resources\UserResource;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CheckPasswordRequest;
 
-use App\Models\Artist;
 use App\Http\Resources\ArtistResource;
+use App\Http\Resources\RecordResource;
+
+use App\Http\Resources\UserResource;
+use App\Models\Artist;
 
 use App\Models\Record;
-use App\Http\Resources\RecordResource;
+use App\Models\User;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
-use App\Http\Requests\CheckPasswordRequest;
 
 class RecordController extends Controller
 {
@@ -41,11 +42,21 @@ class RecordController extends Controller
     }
 
     /**
-     * Returns all Records.
+     * Returns all Records. 
+     *  Optional: 
+     *      query - ?type=[TypeName] -> Returns all records which has the given queries type
      * @return \Illuminate\Http\JsonResponse
      */
-    public function getRecords(){
-        $list = Record::with('artists')->get();
+    public function getRecords(Request $request){
+
+        $list = Record::with('artists')
+            ->when($request->query('type'), function($query) use ($request) {
+                $query->whereHas('type', function($q) use ($request) {
+                    $q->where('type_name', $request->query('type'));
+                });
+            })
+            ->get();
+
         $listRes = RecordResource::collection($list);
         return response()->json($listRes);
     }
