@@ -2,16 +2,20 @@
 
 namespace App\Models;
 
+use App\Models\Artist;
+use App\Models\RecordType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use App\Models\RecordType;
 
 class Record extends Model
 {
     
     public $table = 'record';
+
     public $timestamps = false;
+
+    public $incrementing = true;
     
     protected $appends = ['image_url'];
 

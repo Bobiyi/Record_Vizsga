@@ -14,6 +14,8 @@ class User extends Authenticatable
 
     public $timestamps = false;
 
+    public $incrementing = true;
+
     protected $primaryKey = 'id';
 
     /** @use HasFactory<\Database\Factories\UserFactory> */
