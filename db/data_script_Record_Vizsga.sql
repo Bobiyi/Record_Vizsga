@@ -134,6 +134,6 @@ insert into artist_record(artist_id,record_id,`role`)
         /*Irina*/
         (16,37,"producer"),
         (16,38,"producer"),
-        (17,39,"producer")
+        (16,39,"producer")
     ;
 /*!!!!!ARTIST_ID - RECORD_ID!!!!!*/
