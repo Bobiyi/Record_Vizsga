@@ -23,6 +23,6 @@ class Artist extends Model
         'is_group' => 'boolean',
     ];
     protected $fillable=[
-        'name','active_since','nationality','url','is_group'
+        'name','active_since','nationality','url','is_group','file_path'
     ];
 }

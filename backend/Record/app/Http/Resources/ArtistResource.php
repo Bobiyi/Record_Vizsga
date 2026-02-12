@@ -16,11 +16,12 @@ class ArtistResource extends JsonResource
     {
         $data = [
             'id' => $this->id,
-            'artistName' =>$this->name,
-            'activeSince' =>$this->active_since,
-            'nationality' =>$this->nationality,
+            'artistName' => $this->name,
+            'activeSince' => $this->active_since,
+            'nationality' => $this->nationality,
             'website' => $this ->url,
             'isGroup' => $this->is_group,
+            'filePath' => $this->file_path
         ];
 
         if ($this->pivot) {

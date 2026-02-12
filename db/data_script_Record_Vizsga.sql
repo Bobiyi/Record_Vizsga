@@ -77,6 +77,7 @@ insert into `record`(`name`,type_id,release_year,`length`,file_path)
         ("halovány", 3, "2025", 1, "Records/Halovany.jpg") /*39*/
     ;
 /*------------------------------------------- SZERZŐK - ALBUMOK KÖTÉS---------------------------------------*/
+/*!!!!!ARTIST_ID - RECORD_ID!!!!!*/
 insert into artist_record(artist_id,record_id,`role`)
     values
         /*Metallica*/
@@ -136,4 +137,3 @@ insert into artist_record(artist_id,record_id,`role`)
         (16,38,"producer"),
         (16,39,"producer")
     ;
-/*!!!!!ARTIST_ID - RECORD_ID!!!!!*/
