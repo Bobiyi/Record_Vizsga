@@ -15,14 +15,17 @@ class RecordResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return [
-            'id' => $this->id,
+        $data=['id' => $this->id,
             'name' => $this->name,
             'typeName'=>$this->type?->type_name,
             'releaseYear' => $this->release_year,
             'length' => $this->length,
-            'coverUrl' => $this->image_url,
-            'artistName' => $this->artists->pluck('name')
-        ];
+            'coverUrl' => $this->image_url];
+
+    if($this->artists) {
+        $data ['artistName']= $this->artists->pluck('name');
+    }
+
+        return $data;
     }
 }

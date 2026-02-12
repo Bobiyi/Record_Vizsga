@@ -13,6 +13,7 @@ use App\Http\Resources\RecordResource;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+
 use App\Http\Requests\CheckPasswordRequest;
 
 class RecordController extends Controller
@@ -46,7 +47,6 @@ class RecordController extends Controller
     public function getRecords(){
         $list = Record::with('artists')->get();
         $listRes = RecordResource::collection($list);
-
         return response()->json($listRes);
     }
 
@@ -98,6 +98,17 @@ class RecordController extends Controller
         $record = Record::with('artists')->findOrFail($recordId);
 
         return response()->json(ArtistResource::collection($record->artists));
+    }
+
+    /**
+     * Return a given Artists All Records
+     * @param int $artistId
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getArtistsRecords(int $artistId) {
+        $artist = Artist::with('records')->findOrFail($artistId);
+
+        return response()->json(RecordResource::collection($artist->records));
     }
 
 

@@ -12,3 +12,4 @@ Route::get('/artists',[RecordController::class,'getArtists']);
 Route::get('/artists/{id}',[RecordController::class,'getArtist']);
 
 Route::get('/records-artist/{recordId}',[RecordController::class,'getRecordsArtists']);
+Route::get('/artists-record/{artistId}',[RecordController::class,'getArtistsRecords']);
