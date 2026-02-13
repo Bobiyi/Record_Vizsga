@@ -92,6 +92,7 @@ export interface IArtist {
   nationality?: string;
   website?: string;
   isGroup?: boolean;
+  filePath?: string;
 }
 
 interface IArtistState {
@@ -121,7 +122,7 @@ export const useArtistStore = defineStore("artists", {
 
 
 
-    // --- 1. Összes termék lekérése ---
+    // --- 1. Összes artist lekérése ---
     async getArtists() {
       this.loading = true;
       try {
@@ -136,7 +137,7 @@ export const useArtistStore = defineStore("artists", {
       }
     },
 
-    // --- 2. Egy termék lekérése ---
+    // --- 2. Egy artist lekérése ---
     async getArtistById(id: number): Promise<void> {
       this.loading = true;
       try {
@@ -151,7 +152,7 @@ export const useArtistStore = defineStore("artists", {
       }
     },
 
-    // --- 3. Új termék létrehozása ---
+    // --- 3. Új artist létrehozása ---
     async createArtist(product: IArtist) {
       try {
         await api.post("/artists", product);

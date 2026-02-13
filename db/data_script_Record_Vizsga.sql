@@ -13,13 +13,13 @@ insert into `user`(id,`name`,password_hash,email,phone)
 /*------------------------------------------- SZERZŐK ------------------------------------------------------*/
 insert into artist(`name`,active_since,nationality,`url`,is_group, file_path)
     values
-        ("Metallica",                       "1981", "usa",  "https://www.metallica.com",            1,  "Metallica"), /*1*/
+        ("Metallica",                       "1981", "usa",  "https://www.metallica.com",            1,  "Artists/Metallica"), /*1*/
         ("Michael Jackson",                 "1964", "usa",  "https://www.michaeljackson.com",       0,  "Artists/MichaelJackson"), /*2*/
         ("Playboi Carti",                   "2015", "usa",  "https://soundcloud.com/playboicarti",  0,  "Artists/PlayboiCarti"), /*3*/
         ("1000 Eyes",                       "2021", null,   "https://thousandeyes.bandcamp.com",    0,  "Artists/1000Eyes"), /*4*/
         ("Masayoshi Takanaka",              "1970", "jpn",  "https://takanaka.com",                 0,  "Artists/MasayoshiTakanaka"), /*5*/
         ("Kárpátia",                        "2003", "hun",  "https://www.karpatiazenekar.hu",       0,  "Artists/Karpatia"), /*6*/
-        ("Korda György",                    "1958", "hun",  null,                                   0,  "KordaGyorgy"), /*7*/
+        ("Korda György",                    "1958", "hun",  null,                                   0,  "Artists/KordaGyorgy"), /*7*/
         ("The Neighbourhood",               "2011", "usa",  "https://tour.thenbhd.com",             1,  "Artists/TheNeighbourhood"), /*8*/
         ("Astrophysics",                    "2018", "bra",  "https://astrophysicsbrazil.bandcamp.com/music", 1, "Artists/Astrophysics"), /*9*/
         ("TV Girl",                         "2013", "usa",  "https://tvgirl.bandcamp.com",          1,  "Artists/TVGirl"), /*10*/

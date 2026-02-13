@@ -8,13 +8,14 @@ onMounted(() => {
   store.getRecords();
 });
 
-
-
 </script>
 
 <template>
   <q-page class="flex flex-center">
-    <div class="q-pa-md row q-gutter-md">
+
+
+    <!--albumok container-->
+    <div class="q-pa-md row q-gutter-md flex flex-center">
          <q-card class="recordCard" flat bordered v-for="record in store.records" :key="record.id">
                <img :src="record.coverUrl">
 
@@ -24,6 +25,9 @@ onMounted(() => {
           </q-card-section>
           </q-card>
     </div>
+
+
+
   </q-page>
 </template>
 
