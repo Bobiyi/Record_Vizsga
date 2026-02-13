@@ -28,7 +28,7 @@ class StoreArtistRequest extends FormRequest
             'artistNationality' => ['nullable','string','max:3'],
             'artistWebsite' => ['nullable','string','max:128'],
             'isGroup' => ['required','integer','digits:1',Rule::in('0','1')],
-            'artistIcon' => ['nullable','image','mimes:jpg','dimensions:ration=1/1'],
+            'artistIcon' => ['nullable','image','mimes:jpg'],
             'artistCover' => ['nullable','image','mimes:jpg']
         ];
     }

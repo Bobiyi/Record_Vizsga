@@ -46,19 +46,11 @@ class RecordController extends Controller
 
     /**
      * Returns all Records. 
-     *  Optional: 
-     *      query - ?type=[TypeName] -> Returns all records which has the given queries type
      * @return \Illuminate\Http\JsonResponse
      */
     public function getRecords(Request $request){
 
-        $list = Record::with('artists')
-            ->when($request->query('type'), function($query) use ($request) {
-                $query->whereHas('type', function($q) use ($request) {
-                    $q->where('type_name', $request->query('type'));
-                });
-            })
-            ->get();
+        $list = Record::with('artists')->get();
 
         $listRes = RecordResource::collection($list);
         return response()->json($listRes);
