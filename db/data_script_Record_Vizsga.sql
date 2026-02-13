@@ -28,7 +28,9 @@ insert into artist(`name`,active_since,nationality,`url`,is_group, file_path)
         ("WEDNESDAY CAMPANELLA",            "2013", "jpn",  null,                                   1,  "Artists/WednesdayCampanella"), /*13*/
         ("MASS OF THE FERMENTING DREGS",    "2006", "jpn",  "https://www.motfd.com/",               1,  "Artists/MassOfTheFermentingDregs"), /*14*/
         ("mollywood",                       "2024", "hun",  "https://astromusic.hu/band/mollywood/",0,  "Artists/Mollywood"), /*15*/
-        ("Irina",                           "2023", "hun",  "https://soundcloud.com/edina-nagy-865719925",0,  "Artists/Irina") /*16*/
+        ("Irina",                           "2023", "hun",  "https://soundcloud.com/edina-nagy-865719925",0,  "Artists/Irina"), /*16*/
+        ("The Marías",                      "2017", "pri",  "https://www.themarias.us",1,  "Artists/TheMarias"), /*17*/
+        ("Broken Social Scene",             "2001", "can",  "https://drop.cobrand.com/d/BrokenSocialScene/BrokenSocialScene" ,1,  "Artists/BorkenSocialScene") /*18*/
 
     ;
 /*------------------------------------------- ALBUMOK ------------------------------------------------------*/
@@ -74,7 +76,19 @@ insert into `record`(`name`,type_id,release_year,`length`,file_path)
         ("Europa", 1, "2025", 11, "Records/Europa.jpg"), /*36*/
         ("gyógynövény", 3, "2023", 1, "Records/Gyogynoveny.jpg"), /*37*/
         ("dohányozni tilos", 1, "2024", 9, "Records/DohanyozniTilos.jpg"), /*38*/
-        ("halovány", 3, "2025", 1, "Records/Halovany.jpg") /*39*/
+        ("halovány", 3, "2025", 1, "Records/Halovany.jpg"), /*39*/
+        ("Submarine", 1, "2024", 14, "Records/Submarine.jpg"), /*40*/
+        ("CINEMA", 1, "2021", 13, "Records/Cinema.jpg"), /*41*/
+        ("No One Noticed", 3, "2024", 1, "Records/NoOneNoticed.jpg"), /*42*/
+        ("Feel Good Lost", 1, "2001", 12, "Records/FeelGoodLost.jpg"),/*43*/
+        ("Anthems For A Seventeen Year-Old Girl", 3, "2002", 1, "Records/AnthemsForASeventeenYearOldGirl.jpg"), /*44*/
+        ("You Forgot It In People", 1, "2013", 13, "Records/YouForgotItInPeople.jpg"), /*45*/
+        ("Bee Hives", 1, "2004", 9, "Records/BeeHives.jpg"), /*46*/
+        ("Broken Social Scene", 1, "2005", 14, "Records/BrokenSocialScene.jpg"), /*47*/
+        ("French Exit", 1, "2014", 12, "Records/FrenchExit.jpg"), /*48*/
+        ("The Night in Question: French Exit Outtakes", 1, "2020", 8, "Records/TheNightInQuestion.jpg"), /*49*/
+        ("Grapes Upon The Vine", 1, "2023", 12, "Records/GrapesUponTheVine.jpg"), /*50*/
+        ("Death of a Party Girl", 1, "2018", 10, "Records/DeathOfAPartyGirl.jpg"), /*51*/
     ;
 /*------------------------------------------- SZERZŐK - ALBUMOK KÖTÉS---------------------------------------*/
 
@@ -114,6 +128,10 @@ insert into artist_record(artist_id,record_id,`role`)
         /*tv girl*/
         (10,23,"producer"),
         (10,24,"producer"),
+        (10,48,"producer"),
+        (10,49,"producer"),
+        (10,50,"producer"),
+        (10,51,"producer"),
         /*jordana*/
         (11,25,"producer"),
         (10,25,"featured"),
@@ -135,6 +153,17 @@ insert into artist_record(artist_id,record_id,`role`)
         /*Irina*/
         (16,37,"producer"),
         (16,38,"producer"),
-        (16,39,"producer")
+        (16,39,"producer"),
+        /*The Marias*/
+        (17,40,"producer"),
+        (17,41,"producer"),
+        (17,42,"producer")
+        /*Broken Social Scene*/
+        (18,43,"producer"),
+        (18,44,"producer"),
+        (18,45,"producer"),
+        (18,46,"producer"),
+        (18,47,"producer"),
+        (18,48,"producer")
     ;
 /*ARTIST_ID - RECORD_ID*/
