@@ -11,7 +11,7 @@ class StoreRecordRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,23 @@ class StoreRecordRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'recordName' =>['required','string','max:64'],
+            'typeId' => ['required','integer'],
+            'releaseYear' => ['nullable','integer','digits:4'],
+            'length' => ['nullable','integer','min:1'],
+            'recordFile' => ['nullable','image','mimes:jpg','dimensions:ratio=1/1,max_width=1280']
+        ];
+    }
+
+    public function toModel() {
+        $data = $this->validated();
+
+        return[
+            'name'=>$data['recordName'],
+            'type_id'=>$data['typeId'],
+            'release_year'=>$data['releaseYear'],
+            'length'=>$data['length'],
+            'file_path'=>$data['recordFile']
         ];
     }
 }

@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+
 use App\Http\Requests\CheckPasswordRequest;
 
+use App\Http\Requests\StoreRecordRequest;
 use App\Http\Resources\ArtistResource;
 use App\Http\Resources\RecordResource;
 
 use App\Http\Resources\UserResource;
-use App\Models\Artist;
 
+use App\Models\Artist;
 use App\Models\Record;
 use App\Models\User;
 
@@ -122,5 +124,35 @@ class RecordController extends Controller
         return response()->json(RecordResource::collection($artist->records));
     }
 
+    public function addRecord(StoreRecordRequest $request) {
+        $data = $request->toModel();
+
+        $path = null;
+        
+        if($request->hasFile('recordFile')) {
+
+            $file = $request->file('recordFile');
+
+            $fileName = pathinfo($file->getClientOriginalName(),PATHINFO_FILENAME);
+
+            $extension = $file->getClientOriginalExtension();
+
+            $savedFileName = $fileName.'_'.uniqid().'.'.$extension;
+
+            $path = $file->storeAs('Records',$savedFileName,'public');
+        }
+
+        $record=Record::create([
+            'name' => $data['name'],
+            'type_id' => $data['type_id'],
+            'release_year' => $data['release_year'],
+            'length' => $data['length'],
+            'file_path' => $path
+        ]);
+
+        return response()->json(['id'=>$record->id]);
+
+
+    }
 
 }
