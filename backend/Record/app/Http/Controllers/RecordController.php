@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\CheckPasswordRequest;
 
+use App\Http\Requests\StoreArtistRequest;
 use App\Http\Requests\StoreRecordRequest;
 use App\Http\Resources\ArtistResource;
 use App\Http\Resources\RecordResource;
@@ -124,6 +125,11 @@ class RecordController extends Controller
         return response()->json(RecordResource::collection($artist->records));
     }
 
+    /**
+     * Adds a new Record to the database
+     * @param StoreRecordRequest $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function addRecord(StoreRecordRequest $request) {
         $data = $request->toModel();
 
@@ -151,8 +157,37 @@ class RecordController extends Controller
         ]);
 
         return response()->json(['id'=>$record->id]);
-
-
     }
 
+    public function addArtist(StoreArtistRequest $request) {
+        $data = $request->toModel();
+
+        if($request->hasFile('artistPicture')) {
+            $picturefile = $request->file('artistPicture');
+
+            $pictureFileName = pathinfo($picturefile->getClientOriginalName(),PATHINFO_FILENAME);
+
+            $pictureExtension = $picturefile->getClientOriginalExtension();
+
+            $savedPictureFileName = $pictureFileName.'_Icon'.$pictureExtension;
+
+            $picturefile->storeAs('Artists',$savedPictureFileName,'public');
+        }
+
+        if($request->hasFile('artistCover')) {
+            $coverfile = $request->file('artistCover');
+
+            $coverFileName = pathinfo($coverfile->getClientOriginalName(),PATHINFO_FILENAME);
+
+            $coverExtension = $coverfile->getClientOriginalExtension();
+
+            $savedCoverFileName = $coverFileName.'_Cover.'.$coverExtension;
+
+            $coverfile->storeAs('Artists',$savedCoverFileName,'public');
+        }
+        $artist = Artist::create($data);
+
+        return response()->json(['id'=>$artist->id]);
+
+    }
 }

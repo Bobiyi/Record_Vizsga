@@ -12,7 +12,7 @@ create table artist(
 	active_since year,
 	nationality varchar(64),
 	`url` varchar(128),
-	is_group int(1),
+	is_group int(1) not null,
 	file_path varchar(255)
 );
 
@@ -41,13 +41,15 @@ alter table artist_record add constraint frk_Artist_ID foreign key (artist_id) r
 alter table artist_record add constraint frk_Record_ID foreign key (record_id) references record(id) on delete cascade;
 
 alter table record add constraint frk_Type foreign key (type_id) references record_type(id);
-alter table record modify release_year int default year(CURRENT_DATE());
+alter table record modify release_year year default year(CURRENT_DATE());
 alter table record modify `length` int default 1;
 alter table record add constraint chk_Length check (`length`>0);
 
 alter table record_type add constraint uc_Type unique (type_name);
 
 alter table artist add constraint uc_Name unique (name);
+alter table artist modify active_since year default year(CURRENT_DATE());
+alter table artist modify is_gropu int(1) default 0;
 
 create index idx_Record_Artist on artist_record(artist_id,record_id);
 

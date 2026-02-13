@@ -17,3 +17,4 @@ Route::get('/records-artist/{recordId}',[RecordController::class,'getRecordsArti
 Route::get('/artists-record/{artistId}',[RecordController::class,'getArtistsRecords']);
 
 Route::post('/record',[RecordController::class,'addRecord']);
+Route::post('/artist',[RecordController::class,'addArtist']);
