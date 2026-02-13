@@ -5,6 +5,7 @@ import { st } from "vue-router/dist/router-CWoNjPRp.mjs";
 // INTERFÉSZEK
 export interface IRecord {
   id?: number;
+  artistName?: string;
   name?: string;
   typeName?: string;
   releaseYear?: number;
@@ -67,6 +68,22 @@ export const useRecordStore = defineStore("records", {
         this.loading = false;
       }
     },
+
+    // --- TERMÉK LEKÉRÉSE ARTIST ID ÁLTAL ---
+    async getRecordByArtistId(id: number): Promise<void> {
+      this.loading = true;
+      try {
+        const res = await api.get(`/artists-record/${id}`);
+        this.records = res.data;
+        this.error = null;
+      } catch (err) {
+        console.log("Hiba a termék lekérésekor:", err);
+        this.error = "Nem sikerült betölteni a terméket.";
+      } finally {
+        this.loading = false;
+      }
+    },
+
 
     // --- 3. Új termék létrehozása ---
     async createRecord(product: IRecord) {

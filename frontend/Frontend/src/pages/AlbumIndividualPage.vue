@@ -1,6 +1,7 @@
 <script setup>
 import { Loading } from "quasar";
 import { useRecordStore } from "../stores/store";
+
 import { onMounted } from "vue";
 import { useRoute } from 'vue-router'
   const route = useRoute();

@@ -19,7 +19,6 @@ function artistNameFormatter(name){
   if(name.length > 23){
     return name.substr(0,20)+".."
   }
-
   return name
 }
 
@@ -34,7 +33,7 @@ function artistNameFormatter(name){
   <router-link class="link"  :to="`../artists/${artist.id}`" v-for="artist in store.artists" :key="artist.id">
   
       <q-card class="card" >
-          <div class="card-top"  :style="`background-image: url(${getArtistBanner(artist.filePath)}); `"></div>
+          <div class="card-top" style="object-position: top;" :style="`background-image: url(${getArtistBanner(artist.filePath)}); `"></div>
           <div class="avatar-wrapper">
             <q-avatar size="100px">
               <img :src="`${getArtistProfilePicture(artist.filePath)}`">
@@ -63,11 +62,16 @@ function artistNameFormatter(name){
   overflow: hidden;
   position: relative;
   background-color: rgb(27, 12, 12);
+  border: Groove 0.2px rgb(61, 61, 61);
+}
+
+.card:hover{
+  transition: 0.5s ;
+  background-color: rgb(39, 26, 26);
 }
 
 .card-top {
   height: 140px;
-  background-image: url('https://picsum.photos/600/300');
   background-size: cover;
   background-position: center;
 }
