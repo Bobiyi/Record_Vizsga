@@ -14,18 +14,22 @@ function recordNameFormatter(name){
   }
   return name
 }
-function artistNameFormat(artists){
+function artistNameFormat(input){
+  let artists = [...input]
   if(artists.length == 1){
+    console.log(artists[0])
     return artists[0]
   } 
   let string = ""
-  artists = artists.reverse()
+  artists.reverse()
+
+
   artists.forEach(e => {
-    if(string == ""){
+        if(string == ""){
       string = artists[0]
     }else{
       string += ", "+e
-    }
+    } 
   });
   return recordNameFormatter(string.trim())
 }
@@ -45,7 +49,7 @@ function artistNameFormat(artists){
 
           <q-card-section>
             <div class="text-h6">{{ recordNameFormatter(record.name) }}</div>
-            <div>{{artistNameFormat(record.artistName) }}</div>
+           <div>{{artistNameFormat(record.artistName) }}</div>
           </q-card-section>
           </q-card>
     </router-link>     

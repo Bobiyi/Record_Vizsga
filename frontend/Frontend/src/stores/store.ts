@@ -5,7 +5,7 @@ import { st } from "vue-router/dist/router-CWoNjPRp.mjs";
 // INTERFÉSZEK
 export interface IRecord {
   id?: number;
-  artistName?: string;
+  artistName?: string[];
   name?: string;
   typeName?: string;
   releaseYear?: number;

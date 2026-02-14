@@ -49,7 +49,7 @@ alter table record_type add constraint uc_Type unique (type_name);
 
 alter table artist add constraint uc_Name unique (name);
 alter table artist modify active_since year default year(CURRENT_DATE());
-alter table artist modify is_gropu int(1) default 0;
+alter table artist modify is_group int(1) default 0;
 
 create index idx_Record_Artist on artist_record(artist_id,record_id);
 

@@ -88,7 +88,7 @@ insert into `record`(`name`,type_id,release_year,`length`,file_path)
         ("French Exit", 1, "2014", 12, "Records/FrenchExit.jpg"), /*48*/
         ("The Night in Question: French Exit Outtakes", 1, "2020", 8, "Records/TheNightInQuestion.jpg"), /*49*/
         ("Grapes Upon The Vine", 1, "2023", 12, "Records/GrapesUponTheVine.jpg"), /*50*/
-        ("Death of a Party Girl", 1, "2018", 10, "Records/DeathOfAPartyGirl.jpg"), /*51*/
+        ("Death of a Party Girl", 1, "2018", 10, "Records/DeathOfAPartyGirl.jpg") /*51*/
     ;
 /*------------------------------------------- SZERZŐK - ALBUMOK KÖTÉS---------------------------------------*/
 
@@ -157,13 +157,12 @@ insert into artist_record(artist_id,record_id,`role`)
         /*The Marias*/
         (17,40,"producer"),
         (17,41,"producer"),
-        (17,42,"producer")
+        (17,42,"producer"),
         /*Broken Social Scene*/
         (18,43,"producer"),
         (18,44,"producer"),
         (18,45,"producer"),
         (18,46,"producer"),
-        (18,47,"producer"),
-        (18,48,"producer")
+        (18,47,"producer")
     ;
 /*ARTIST_ID - RECORD_ID*/
